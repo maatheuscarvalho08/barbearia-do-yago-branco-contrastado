@@ -1,50 +1,1346 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Protótipo visual Branco Contrastado da Barbearia do Yago." />
-  <title>Barbearia do Yago | Branco Contrastado</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Barbearia do Yago | Branco Contrastado</title>
+<meta name="description" content="Barbearia do Yago. Branco Contrastado, planos, equipe e unidades." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://barbeariadoyago.com.br/" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="/favicon-48.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/favicon-180.png" sizes="180x180" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta property="og:title" content="Barbearia do Yago" />
+<meta property="og:description" content="Sua barbearia por assinatura. Duas unidades no RJ, o mesmo padrão de corte." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://barbeariadoyago.com.br/" />
+<meta property="og:image" content="https://barbeariadoyago.com.br/assets/hero.png" />
+<meta property="og:image:alt" content="Barbearia do Yago, sua barbearia por assinatura." />
+<meta property="og:locale" content="pt_BR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Barbearia do Yago" />
+<meta name="twitter:description" content="Sua barbearia por assinatura em Alcântara e Maricá." />
+<meta name="twitter:image" content="https://barbeariadoyago.com.br/assets/hero.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Barbershop",
+      "@id": "https://barbeariadoyago.com.br/#alcantara",
+      "name": "Barbearia do Yago - Alcântara",
+      "url": "https://barbeariadoyago.com.br/#unidades",
+      "image": "https://barbeariadoyago.com.br/assets/fachada-alcantara.png",
+      "telephone": "+5521972599512",
+      "priceRange": "$$",
+      "sameAs": ["https://www.instagram.com/barbeariadoyago/"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Dr. Alfredo Backer, 536 - Lj G bl4 - Alcântara",
+        "addressLocality": "São Gonçalo",
+        "addressRegion": "RJ",
+        "postalCode": "24710-120",
+        "addressCountry": "BR"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
+    },
+    {
+      "@type": "Barbershop",
+      "@id": "https://barbeariadoyago.com.br/#marica",
+      "name": "Barbearia do Yago - Maricá",
+      "url": "https://barbeariadoyago.com.br/#unidades",
+      "image": "https://barbeariadoyago.com.br/assets/fachada-marica.webp",
+      "telephone": "+5521983652302",
+      "priceRange": "$$",
+      "sameAs": ["https://www.instagram.com/barbeariadoyago/"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Ver. Luiz Antonio da Cunha, 35 - Shopping Boulevard - Centro",
+        "addressLocality": "Maricá",
+        "addressRegion": "RJ",
+        "postalCode": "24900-000",
+        "addressCountry": "BR"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #16232c;
+    --ink-2: #10181f;
+    --ink-soft: #22313d;
+    --ink-line: rgba(241, 236, 226, 0.12);
+    --bone: #ffffff;
+    --bone-2: #f1f4f6;
+    --brand: #216fac;
+    --brand-deep: #185887;
+    --steel: #a7b0b7;
+    --steel-dark: #52616d;
+    --gold: #d8a24a;
+    --pole: var(--brand);
+
+    --fs-hero: clamp(2.5rem, 6vw, 4.6rem);
+    --fs-h2: clamp(2rem, 4.4vw, 3.3rem);
+    --fs-h3: clamp(1.2rem, 2vw, 1.5rem);
+    --maxw: 1180px;
+    --pad-x: clamp(1.15rem, 5vw, 4rem);
+    --sec-y: clamp(4.5rem, 9vw, 8rem);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+
+  body {
+    background: var(--ink);
+    color: var(--bone);
+    font-family: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.02rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 { font-family: "Figtree", system-ui, sans-serif; line-height: 1.05; font-weight: 800; letter-spacing: -0.03em; }
+
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  ::selection { background: var(--brand); color: #fff; }
+
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--pad-x); }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brand);
+    display: inline-block;
+  }
+  section.on-bone .eyebrow { color: var(--brand-deep); }
+
+  /* ---------- buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    font-family: "Figtree", sans-serif;
+    font-weight: 600;
+    font-size: 0.98rem;
+    letter-spacing: 0.01em;
+    padding: 0.95rem 1.7rem;
+    border-radius: 2px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .btn--primary { background: var(--brand); color: #fff; }
+  .btn--primary:hover { background: var(--brand-deep); transform: translateY(-2px); }
+  .btn--ghost { border-color: currentColor; color: var(--bone); }
+  .btn--ghost:hover { background: var(--bone); color: var(--ink); transform: translateY(-2px); }
+  section.on-bone .btn--ghost { color: var(--ink); }
+  section.on-bone .btn--ghost:hover { background: var(--ink); color: var(--bone); }
+
+  /* ---------- nav ---------- */
+  .nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 50;
+    background: rgba(9, 19, 32, 0.82);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--ink-line);
+  }
+  .nav__inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0.75rem var(--pad-x);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .brand { display: flex; align-items: center; gap: 0.7rem; font-family: "Figtree", sans-serif; font-weight: 600; font-size: 1.05rem; }
+  .brand__badge {
+    width: 46px; height: 46px;
+    background: center / contain no-repeat url("assets/logo.png");
+    filter: brightness(0) invert(1);
+    flex: none;
+  }
+  .brand__text small { display: block; font-family: "IBM Plex Mono", monospace; font-size: 0.6rem; letter-spacing: 0.18em; color: var(--steel); font-weight: 400; }
+
+  .nav__links { display: flex; align-items: center; gap: 1.25rem; }
+  .nav__links a { font-size: 0.9rem; color: var(--steel); transition: color 0.15s ease; white-space: nowrap; }
+  .nav__links a:hover { color: var(--bone); }
+
+  .nav__cta { display: flex; align-items: center; gap: 0.7rem; }
+  .nav__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; height: 40px;
+    border: 1px solid var(--ink-line);
+    border-radius: 2px;
+    color: var(--steel);
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .nav__icon:hover { color: var(--bone); border-color: var(--steel-dark); }
+  .nav__icon svg { width: 18px; height: 18px; }
+  .nav__book-short { display: none; }
+  .nav__menu-foot { display: none; }
+  .nav__toggle .ico-close { display: none; }
+  .nav__toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--ink-line);
+    border-radius: 2px;
+    width: 42px; height: 42px;
+    color: var(--bone);
+    cursor: pointer;
+  }
+  .nav__toggle svg { width: 20px; height: 20px; margin: 0 auto; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: 140px 0 clamp(3rem, 7vw, 6rem);
+    background: linear-gradient(90deg, rgba(9,19,32,0.86) 0%, rgba(9,19,32,0.6) 38%, rgba(9,19,32,0.15) 100%),
+                linear-gradient(180deg, rgba(9,19,32,0.32) 0%, rgba(9,19,32,0.2) 30%, rgba(9,19,32,0.9) 100%),
+                #0d1a2b 62% 48% / cover no-repeat url("assets/hero.png");
+    overflow: hidden;
+  }
+  .hero__content { position: relative; z-index: 3; max-width: 900px; margin: 0 auto; text-align: center; }
+  .hero__logo {
+    display: block;
+    width: clamp(190px, 27vw, 300px);
+    height: auto;
+    margin: -1rem auto 0.6rem;
+    filter:
+      drop-shadow(0 0 1px #fff)
+      drop-shadow(0 0 3px rgba(255, 255, 255, 0.75))
+      drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+  }
+  .hero h1 {
+    font-size: var(--fs-hero);
+    margin: 0 0 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em { color: var(--brand); font-style: normal; }
+  .hero__sub { font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: #d7cfc2; max-width: 46ch; margin: 0 auto; }
+  .hero__actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 2rem; justify-content: center; }
+
+  /* ---------- strip ---------- */
+  .strip { background: var(--bone-2); color: var(--ink); }
+  .strip__inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 1.4rem var(--pad-x);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem 2rem;
+  }
+  .strip__item { display: flex; flex-direction: column; gap: 0.1rem; }
+  .strip__item b { font-family: "Figtree", sans-serif; font-size: 1.5rem; line-height: 1; display: flex; align-items: center; gap: 0.4rem; }
+  .strip__item span { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--steel-dark); }
+  .strip__stars { color: var(--gold); letter-spacing: 0.05em; font-size: 1rem; }
+
+  /* ---------- section base ---------- */
+  .section { padding: var(--sec-y) 0; }
+  .section.on-bone { background: var(--bone); color: var(--ink); }
+  .section__head { max-width: 640px; margin-bottom: clamp(2.4rem, 5vw, 3.6rem); }
+  .section__head h2 { font-size: var(--fs-h2); margin: 1rem 0 0.8rem; text-transform: uppercase; }
+  .section.on-bone .section__lead { color: #4a5461; }
+  .section__lead { color: var(--steel); font-size: 1.08rem; }
+
+  /* ---------- sobre ---------- */
+  .sobre__grid { display: grid; grid-template-columns: 0.85fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+  .sobre__photo { position: relative; }
+  .sobre__photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 2px; filter: grayscale(0.15) contrast(1.03); }
+  .sobre__photo figcaption {
+    position: absolute; left: -1px; bottom: 1.4rem;
+    background: var(--brand); color: #fff;
+    font-family: "IBM Plex Mono", monospace; font-size: 0.7rem;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 0.5rem 1rem;
+  }
+  .sobre__body h2 { font-size: var(--fs-h2); text-transform: uppercase; margin: 0.9rem 0 1.2rem; }
+  .sobre__body p + p { margin-top: 1rem; }
+
+  /* ---------- agende ---------- */
+  .agende__grid { display: grid; grid-template-columns: 1fr 0.9fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+  .steps { list-style: none; counter-reset: s; display: grid; gap: 1.1rem; margin: 2rem 0; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: auto 1fr; gap: 1.1rem; align-items: baseline; padding-bottom: 1.1rem; border-bottom: 1px solid rgba(13,26,43,0.12); }
+  .steps li::before {
+    content: counter(s, decimal-leading-zero);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.9rem;
+    color: var(--brand-deep);
+    font-weight: 500;
+  }
+  .steps b { font-family: "Figtree", sans-serif; font-size: 1.15rem; }
+  .steps span { display: block; color: #4a5461; font-size: 0.95rem; }
+  .agende__phone { position: relative; display: flex; justify-content: center; }
+  .agende__phone img { width: min(100%, 380px); border-radius: 14px; box-shadow: 0 40px 90px -30px rgba(9,19,32,0.55); }
+
+  /* ---------- unidades ---------- */
+  .units { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(1.5rem, 3vw, 2.4rem); }
+  .unit { border: 1px solid var(--ink-line); border-radius: 2px; overflow: hidden; display: flex; flex-direction: column; background: var(--ink-soft); }
+  .unit__img { aspect-ratio: 16/10; object-fit: cover; width: 100%; }
+  .unit__body { padding: clamp(1.4rem, 3vw, 2rem); display: flex; flex-direction: column; gap: 0.9rem; flex: 1; }
+  .unit__body h3 { font-size: 1.5rem; text-transform: uppercase; }
+  .unit__row { display: flex; gap: 0.7rem; color: var(--steel); font-size: 0.95rem; }
+  .unit__row svg { width: 17px; height: 17px; flex: none; margin-top: 0.25rem; color: var(--brand); }
+  .unit__actions { margin-top: auto; padding-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.7rem; }
+  .unit__actions .btn { padding: 0.7rem 1.2rem; font-size: 0.9rem; }
+
+  /* ---------- planos ---------- */
+  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+  .plan-clubs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 0 0 2rem;
+  }
+  .plan-units {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: -1.4rem 0 1rem;
+  }
+  .plan-filter-label,
+  .plans-swipe { display: none; }
+  .plan-unit {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.72rem 1.05rem;
+    border: 1px solid rgba(13,26,43,0.24);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .plan-unit[aria-selected="true"] {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+  }
+  .plan-club {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.72rem 1.05rem;
+    border: 1px solid rgba(13,26,43,0.24);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .plan-club[aria-selected="true"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bone);
+  }
+  .plan__details {
+    min-height: 5.8rem;
+    list-style: none;
+    display: grid;
+    gap: 0.55rem;
+    font-size: 0.95rem;
+  }
+  .plan__details li { padding-left: 1.35rem; position: relative; color: #4a5461; }
+  .plan__details li::before { content: "—"; position: absolute; left: 0; color: var(--brand-deep); }
+  .plan__details li.plan__detail--unavailable { color: #86919b; }
+  .plan__details li.plan__detail--unavailable::before { content: "×"; color: #86919b; }
+  .plan--feature .plan__details li { color: #cfc7ba; }
+  .plan--feature .plan__details li::before { color: var(--brand); }
+  .plan {
+    border: 1px solid rgba(13,26,43,0.16);
+    border-radius: 2px;
+    padding: clamp(1.5rem, 3vw, 2.1rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    background: #fff;
+  }
+  .plan--feature { background: var(--ink); color: var(--bone); border-color: var(--ink); position: relative; }
+  .plan--feature .plan__list li { color: #cfc7ba; }
+  .plan--feature .plan__list li::before { color: var(--brand); }
+  .plan__tag { font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brand-deep); }
+  .plan--feature .plan__tag { color: #fff; background: var(--brand); padding: 0.3rem 0.6rem; align-self: flex-start; }
+  .plan__name { font-family: "Figtree", sans-serif; font-size: 1.6rem; text-transform: uppercase; }
+  .plan__price { font-family: "Figtree", sans-serif; font-size: 2.4rem; line-height: 1; }
+  .plan__price small { font-family: "IBM Plex Mono", monospace; font-size: 0.8rem; color: var(--steel-dark); letter-spacing: 0.04em; }
+  .plan--feature .plan__price small { color: var(--steel); }
+  .plan__list { list-style: none; display: grid; gap: 0.55rem; font-size: 0.95rem; }
+  .plan__list li { padding-left: 1.4rem; position: relative; color: #4a5461; }
+  .plan__list li::before { content: "—"; position: absolute; left: 0; color: var(--brand-deep); }
+  .plan .btn { margin-top: auto; }
+
+  .avulso { margin-top: 2.6rem; border-top: 2px solid var(--ink); padding-top: 1.6rem; }
+  .avulso h3 { font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1rem; }
+  .avulso__list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.4rem 2.5rem; }
+  .avulso__list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px dotted rgba(13,26,43,0.25); font-family: "IBM Plex Mono", monospace; font-size: 0.9rem; }
+  .avulso__list b { font-weight: 500; }
+
+  /* ---------- equipe ---------- */
+  .tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; }
+  .tab {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.7rem 1.3rem;
+    border: 1px solid var(--ink-line);
+    background: none;
+    color: var(--steel);
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.15s ease;
+  }
+  .tab[aria-selected="true"] { background: var(--brand); border-color: var(--brand); color: #fff; }
+  .team-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+  .team-grid[hidden] { display: none; }
+  .member { position: relative; overflow: hidden; border-radius: 2px; background: var(--ink-2); }
+  .member img { width: 100%; aspect-ratio: 1; object-fit: cover; filter: grayscale(0.35) contrast(1.05); transition: filter 0.3s ease, transform 0.4s ease; }
+  .member:hover img { filter: grayscale(0) contrast(1); transform: scale(1.04); }
+  .member__ph {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ink-soft);
+    color: var(--steel-dark);
+    font-family: "Figtree", sans-serif;
+    font-weight: 700;
+    font-size: 2.6rem;
+  }
+  .member figcaption {
+    position: absolute; inset: auto 0 0 0;
+    padding: 1.4rem 0.8rem 0.7rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    background: linear-gradient(180deg, transparent, rgba(9,19,32,0.9));
+  }
+
+  /* ---------- galeria ---------- */
+  .gallery { columns: 3; column-gap: 1rem; }
+  .gallery img { width: 100%; margin-bottom: 1rem; border-radius: 2px; break-inside: avoid; filter: grayscale(0.1); }
+
+  /* ---------- cta final ---------- */
+  .final { position: relative; background: var(--ink-2); text-align: center; overflow: hidden; }
+  .final__pole { position: absolute; inset: 0 0 auto 0; height: 6px; background: var(--pole); background-size: auto 120px; }
+  .final__pole--b { inset: auto 0 0 0; top: auto; }
+  .final h2 { font-size: clamp(2.4rem, 6vw, 4.4rem); text-transform: uppercase; }
+  .final p { color: var(--steel); margin: 1rem auto 2rem; max-width: 40ch; }
+  .final__actions { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
+
+  /* ---------- footer ---------- */
+  .footer { background: var(--ink-2); border-top: 1px solid var(--ink-line); padding: clamp(3rem, 6vw, 4.5rem) 0 2rem; }
+  .footer__grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(2rem, 5vw, 3.5rem); }
+  .footer__brand .brand__badge { width: 88px; height: 88px; }
+  .footer__nav { list-style: none; display: grid; gap: 0.6rem; margin-top: 1.4rem; }
+  .footer__nav a { color: var(--steel); font-size: 0.92rem; }
+  .footer__nav a:hover { color: var(--bone); }
+  .footer__unit h4 { font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brand); margin-bottom: 0.9rem; }
+  .footer__unit p { color: var(--steel); font-size: 0.92rem; margin-bottom: 0.5rem; }
+  .footer__unit a.footer__link { display: block; color: var(--bone); font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem; }
+  .footer__unit a.footer__link:hover { color: var(--brand); }
+  .footer__bottom {
+    max-width: var(--maxw); margin: 3rem auto 0; padding: 1.6rem var(--pad-x) 0;
+    border-top: 1px solid var(--ink-line);
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+    color: var(--steel-dark); font-size: 0.82rem;
+    font-family: "IBM Plex Mono", monospace;
+  }
+  .footer__social { display: flex; gap: 1rem; }
+  .footer__social a { color: var(--steel); }
+  .footer__social a:hover { color: var(--bone); }
+  .footer__social svg { width: 20px; height: 20px; }
+
+  /* ---------- motion ---------- */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.is-in { opacity: 1; transform: none; }
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 1000px) {
+    .team-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  @media (max-width: 880px) {
+    .nav__links { display: none; }
+    .nav__toggle { display: flex; align-items: center; justify-content: center; }
+    .brand__text small { display: none; }
+    .brand__text { font-size: 1rem; }
+    .nav__icon { display: none; }
+
+    /* full-screen mobile menu */
+    .nav.is-open { background: var(--ink-2); backdrop-filter: none; -webkit-backdrop-filter: none; }
+    .nav.is-open .nav__toggle .ico-open { display: none; }
+    .nav.is-open .nav__toggle .ico-close { display: block; }
+    .nav.is-open .nav__links {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      position: fixed;
+      top: 62px; left: 0; right: 0; bottom: 0;
+      background: var(--ink-2);
+      padding: 1.6rem var(--pad-x) 2.5rem;
+      gap: 0;
+      overflow-y: auto;
+      z-index: 40;
+    }
+    .nav.is-open .nav__links > a {
+      font-family: "Figtree", sans-serif;
+      font-weight: 600;
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      color: var(--bone);
+      padding: 1.05rem 0;
+      border-bottom: 1px solid var(--ink-line);
+    }
+    .nav.is-open .nav__menu-foot {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: auto;
+      padding-top: 2rem;
+    }
+    .nav__menu-foot .btn { width: 100%; padding: 1.05rem; font-size: 1rem; }
+    .nav__menu-social { display: flex; gap: 0.8rem; }
+    .nav__menu-social .nav__icon { display: inline-flex; width: 46px; height: 46px; }
+
+    .sobre__grid, .agende__grid { grid-template-columns: 1fr; }
+    .sobre__photo { max-width: 460px; margin-inline: auto; }
+    .agende__phone { order: -1; }
+    .units { grid-template-columns: 1fr; }
+    .plans { grid-template-columns: 1fr; }
+    .strip__inner { grid-template-columns: repeat(2, 1fr); gap: 1.4rem 2rem; }
+    .footer__grid { grid-template-columns: 1fr; }
+    .gallery { columns: 2; }
+    .team-grid { grid-template-columns: repeat(3, 1fr); }
+    .member img,
+    .member:hover img { filter: grayscale(0) contrast(1); transform: none; }
+  }
+
+  @media (max-width: 640px) {
+    :root {
+      --fs-hero: clamp(2rem, 8.5vw, 2.7rem);
+      --fs-h2: clamp(1.8rem, 6vw, 2.4rem);
+      --sec-y: clamp(3.5rem, 13vw, 5rem);
+      --pad-x: 1.4rem;
+    }
+    .nav__inner { padding-block: 0.6rem; }
+    .nav__book-full { display: none; }
+    .nav__book-short { display: inline; }
+    .nav__book { padding: 0.7rem 1.15rem; font-size: 0.9rem; }
+    .brand__badge { width: 42px; height: 42px; }
+
+    /* hero */
+    .hero { min-height: 90svh; align-items: center; padding-top: 120px; }
+    .hero__logo { width: clamp(160px, 52vw, 220px); }
+    .hero__logo {
+      filter:
+        drop-shadow(0 0 1px #fff)
+        drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
+    }
+    .hero__actions { flex-direction: column; align-items: stretch; width: 100%; max-width: 340px; margin-inline: auto; }
+    .hero__actions .btn { width: 100%; padding: 1.05rem; }
+
+    /* strip */
+    .strip__inner {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.6rem 1.1rem;
+      padding-block: 1.8rem;
+    }
+    .strip__item b { font-size: 1.7rem; }
+    .strip__item span { font-size: 0.62rem; letter-spacing: 0.09em; }
+
+    /* section heads */
+    .section__head { margin-bottom: 2rem; }
+
+    /* unidades */
+    .unit__actions { flex-direction: column; align-items: stretch; }
+    .unit__actions .btn { width: 100%; }
+
+    /* planos */
+    #planos .section__head { margin-bottom: 1.4rem; }
+    #planos .section__lead { font-size: 0.98rem; line-height: 1.55; }
+    .plan-filter-label {
+      display: block;
+      margin-bottom: 0.55rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--steel-dark);
+    }
+    .plan-units {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.35rem;
+      margin: 0 0 1.25rem;
+      padding: 0.3rem;
+      border: 1px solid rgba(13,26,43,0.12);
+      background: rgba(255,255,255,0.42);
+    }
+    .plan-unit { width: 100%; text-align: center; border-color: transparent; padding: 0.78rem 0.5rem; }
+    .plan-clubs {
+      flex-wrap: nowrap;
+      gap: 0.45rem;
+      margin: 0 calc(-1 * var(--pad-x)) 0.85rem 0;
+      padding: 0 1.4rem 0.25rem 0;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .plan-clubs::-webkit-scrollbar,
+    .plans::-webkit-scrollbar { display: none; }
+    .plan-club {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      white-space: nowrap;
+      border-radius: 999px;
+      padding: 0.72rem 0.95rem;
+    }
+    .plans-swipe {
+      display: block;
+      margin-bottom: 0.65rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--steel-dark);
+    }
+    .plans {
+      display: flex;
+      gap: 0.8rem;
+      margin-right: calc(-1 * var(--pad-x));
+      padding: 0 var(--pad-x) 0.7rem 0;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      overscroll-behavior-inline: contain;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .plan {
+      flex: 0 0 calc(100% - 1.8rem);
+      scroll-snap-align: start;
+      padding: 1.35rem 1.2rem;
+      gap: 0.85rem;
+    }
+    .plan__name { font-size: 1.4rem; }
+    .plan__price { font-size: 2.15rem; }
+    .plan__details { min-height: 0; gap: 0.45rem; font-size: 0.9rem; }
+    .plan .btn { width: 100%; }
+    .avulso__list { grid-template-columns: 1fr; }
+
+    /* equipe */
+    .tabs .tab { flex: 1; text-align: center; padding: 0.8rem 0.5rem; }
+
+    /* cta final */
+    .final .wrap { padding-inline: var(--pad-x); }
+    .final h2 { font-size: clamp(2rem, 10vw, 2.6rem); text-wrap: balance; }
+    .final__actions { flex-direction: column; align-items: stretch; }
+    .final__actions .btn { width: 100%; min-width: 0; white-space: normal; }
+
+    /* footer */
+    .footer__bottom { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+  }
+
+  @media (max-width: 460px) {
+    .gallery { columns: 1; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .brand__text { display: none; }
+  }
+
+  /* ---------- premium blue ---------- */
+  .hero {
+    background:
+      linear-gradient(90deg, rgba(16,24,31,0.95) 0%, rgba(16,24,31,0.76) 48%, rgba(16,24,31,0.18) 100%),
+      linear-gradient(180deg, rgba(16,24,31,0.12) 0%, rgba(16,24,31,0.84) 100%),
+      #10181f 62% 48% / cover no-repeat url("assets/hero.png");
+  }
+  .hero__content {
+    max-width: 1180px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .hero__logo { margin-left: 0; }
+  .hero__sub { margin-left: 0; color: #ffffff; }
+  .hero__actions { justify-content: flex-start; }
+  .hero__logo {
+    filter:
+      drop-shadow(0 0 1px #ffffff)
+      drop-shadow(0 0 3px rgba(255,255,255,0.75))
+      drop-shadow(0 0 8px rgba(255,255,255,0.3));
+  }
+  .btn,
+  .unit,
+  .plan,
+  .member { border-radius: 8px; }
+
+  .nav {
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(16px) saturate(1.15);
+    -webkit-backdrop-filter: blur(16px) saturate(1.15);
+    border-bottom-color: rgba(33,111,172,0.16);
+  }
+  .brand { color: var(--ink); }
+  .brand__badge {
+    filter: brightness(0) saturate(100%) invert(39%) sepia(44%) saturate(1423%) hue-rotate(166deg) brightness(91%) contrast(87%);
+  }
+  .brand__text small,
+  .nav__links a { color: #52616d; }
+  .nav__links a:hover,
+  .nav__icon:hover { color: var(--brand); }
+  .nav__icon,
+  .nav__toggle {
+    border-color: rgba(33,111,172,0.24);
+    color: var(--brand);
+  }
+
+  .strip { background: #ffffff; }
+  .section.on-bone { background: #ffffff; }
+  .plan-filter-label,
+  .section.on-bone .section__lead { color: #52616d; }
+  .plan--feature {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #ffffff;
+  }
+  .plan--feature .plan__tag,
+  .plan--feature .btn--primary {
+    background: #ffffff;
+    color: var(--brand);
+  }
+  .plan--feature .plan__price small,
+  .plan--feature .plan__details li { color: rgba(255,255,255,0.9); }
+  .plan--feature .plan__details li::before { color: #ffffff; }
+
+  .final { background: var(--brand); }
+  .final p { color: rgba(255,255,255,0.88); }
+  .final .btn--primary {
+    background: #ffffff;
+    color: var(--brand);
+  }
+  .final .btn--primary:hover {
+    background: #f1f4f6;
+    color: var(--brand-deep);
+  }
+  .final .btn--ghost {
+    border-color: #ffffff;
+    color: #ffffff;
+  }
+  .final .btn--ghost:hover {
+    background: #ffffff;
+    color: var(--brand);
+  }
+
+  @media (max-width: 720px) {
+    .hero__content { text-align: center; }
+    .hero__logo,
+    .hero__sub { margin-inline: auto; }
+    .hero__actions { justify-content: center; }
+  }
+
+  @media (max-width: 960px) {
+    .nav.is-open,
+    .nav.is-open .nav__links { background: #ffffff; }
+    .nav.is-open .nav__links > a {
+      color: var(--ink);
+      border-bottom-color: rgba(33,111,172,0.16);
+    }
+  }
+
+  /* Proposta Branco Contrastado */
+  :root {
+    --brand: #287fbd;
+    --brand-deep: #1d67a0;
+    --bone: #ffffff;
+    --bone-2: #f4f8fb;
+  }
+  .nav {
+    background: rgba(255, 255, 255, 0.82);
+    border-bottom-color: rgba(22, 35, 44, 0.1);
+  }
+  .brand { color: var(--ink); }
+  .brand__badge { filter: none; }
+  .brand__text small,
+  .nav__links a { color: #52616d; }
+  .nav__links a:hover { color: var(--ink); }
+  .nav__icon,
+  .nav__toggle {
+    border-color: rgba(22, 35, 44, 0.16);
+    color: var(--brand);
+  }
+  .hero {
+    background:
+      linear-gradient(90deg, rgba(9, 27, 41, 0.87) 0%, rgba(9, 27, 41, 0.56) 48%, rgba(9, 27, 41, 0.22) 100%),
+      linear-gradient(180deg, rgba(9, 27, 41, 0.16), rgba(9, 27, 41, 0.78)),
+      #0d1a2b 62% 48% / cover no-repeat url("assets/hero.png");
+  }
+  .section.on-bone,
+  .strip { background: #ffffff; }
+  @media (max-width: 960px) {
+    .nav.is-open,
+    .nav.is-open .nav__links { background: rgba(255, 255, 255, 0.98); }
+  }
+</style>
 </head>
 <body>
-  <header class="nav">
-    <a class="brand" href="#inicio"><img src="assets/logo.png" alt="Barbearia do Yago" /><span>Barbearia do Yago</span></a>
-    <nav><a href="#planos">Planos</a><a href="#equipe">Equipe</a><a href="#contato">Contato</a></nav>
-    <a class="button button--small" href="#planos">Agendar horário</a>
-  </header>
-  <main>
-    <section class="hero" id="inicio">
-      <div class="hero__content">
-        <p class="eyebrow">PROTÓTIPO VISUAL</p>
-        <img class="hero__logo" src="assets/logo-dark.jpg" alt="Barbearia do Yago" />
-        <h1>Sua barbearia<br /><span>por assinatura.</span></h1>
-        <p>Uma proposta branca, direta e contemporânea.</p>
-        <div class="hero__actions"><a class="button" href="#planos">Ver planos</a><a class="button button--ghost" href="#equipe">Conhecer equipe</a></div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#inicio" aria-label="Barbearia do Yago, início">
+      <span class="brand__badge" aria-hidden="true"></span>
+      <span class="brand__text">Barbearia do Yago<small>Sua barbearia por assinatura</small></span>
+    </a>
+    <nav class="nav__links" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#agende">Agende</a>
+      <a href="#unidades">Unidades</a>
+      <a href="#planos">Planos</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+      <div class="nav__menu-foot">
+        <a class="btn btn--primary" data-action="book" href="#agende">Agendar horário</a>
+        <div class="nav__menu-social">
+          <a class="nav__icon" data-action="instagram" href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="nav__icon" data-action="whatsapp" href="#" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+          </a>
+        </div>
       </div>
-    </section>
-    <section class="intro"><p class="eyebrow">BRANCO CONTRASTADO</p><h2>Mais respiro para decidir.</h2><p>O branco organiza os planos e o azul destaca cada ação importante.</p></section>
-    <section class="section" id="planos">
-      <div class="section__heading"><p class="eyebrow">CLUBE</p><h2>Planos por assinatura.</h2><p>Escolha a unidade e encontre o clube ideal.</p></div>
-      <div class="plans">
-        <article class="plan"><p>CLUBE ONE</p><h3>Corte</h3><strong>R$ 40,00</strong><span>por mês</span><a href="https://celcash.celcoin.com.br/barbeariadoyago2/clubeone" target="_blank" rel="noopener">Assinar clube</a></article>
-        <article class="plan plan--featured"><p>CLUBE OURO</p><h3>Corte e barba</h3><strong>R$ 199,90</strong><span>por mês</span><a href="https://celcash.celcoin.com.br/barbeariadoyago2/clubeouro" target="_blank" rel="noopener">Assinar clube</a></article>
-        <article class="plan"><p>UNIDADES</p><h3>Maricá e Alcântara</h3><strong>Agenda direta</strong><span>Checkout por clube</span><a href="https://celcash.celcoin.com.br/barbeariadoyago2/clubeouro" target="_blank" rel="noopener">Ver opções</a></article>
+    </nav>
+    <div class="nav__cta">
+      <a class="nav__icon" data-action="instagram" href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a class="nav__icon" data-action="whatsapp" href="#" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+      </a>
+      <a class="btn btn--primary nav__book" data-action="book" href="#agende"><span class="nav__book-full">Agendar horário</span><span class="nav__book-short">Agendar</span></a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <svg class="ico-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="wrap hero__content">
+      <img class="hero__logo" src="assets/logo.png" alt="Barbearia do Yago" />
+      <h1>Sua barbearia<br /><em>por assinatura.</em></h1>
+      <p class="hero__sub">Um plano por mês, cortes quantas vezes precisar. Corte de precisão e atendimento de verdade em duas unidades no RJ.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" data-action="book" href="#agende">Agende seu horário</a>
+        <a class="btn btn--ghost" href="#planos">Ver planos</a>
       </div>
-    </section>
-    <section class="section team" id="equipe">
-      <div class="section__heading"><p class="eyebrow">EQUIPE</p><h2>Quem está na cadeira.</h2><p>Profissionais das unidades Maricá e Alcântara.</p></div>
-      <div class="team__grid">
-        <figure><img src="assets/thiago.jpg" alt="Thiago" /><figcaption>Thiago <small>Alcântara</small></figcaption></figure>
-        <figure><img src="assets/joao.jpg" alt="João Machado" /><figcaption>João <small>Alcântara</small></figcaption></figure>
-        <figure><img src="assets/samuel.jpg" alt="Samuel" /><figcaption>Samuel <small>Maricá</small></figcaption></figure>
-        <figure><img src="assets/kamile.jpg" alt="Kamile" /><figcaption>Kamile <small>Maricá</small></figcaption></figure>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="strip__inner">
+      <div class="strip__item">
+        <b>5,0 <span class="strip__stars" aria-hidden="true">★★★★★</span></b>
+        <span>Avaliação no Google</span>
       </div>
-    </section>
-  </main>
-  <footer id="contato"><img src="assets/logo.png" alt="Barbearia do Yago" /><p>Barbearia do Yago<br /><span>Protótipo Branco Contrastado</span></p><a href="#inicio">Voltar ao início</a></footer>
+      <div class="strip__item"><b>2</b><span>Unidades no RJ</span></div>
+      <div class="strip__item"><b>16</b><span>Profissionais</span></div>
+      <div class="strip__item"><b>1x</b><span>Assinatura mensal</span></div>
+    </div>
+  </div>
+
+  <section class="section" id="sobre">
+    <div class="wrap sobre__grid">
+      <figure class="sobre__photo reveal">
+        <img src="assets/yago.jpg" alt="Yago, fundador da Barbearia do Yago, de braços cruzados na fachada da barbearia" />
+        <figcaption>Yago · Fundador</figcaption>
+      </figure>
+      <div class="sobre__body reveal">
+        <span class="eyebrow">Sobre a casa</span>
+        <h2>Do corredor de casa pra duas unidades.</h2>
+        <p>O Yago começou em 2016, quando largou o emprego pra aprender uma profissão nova. Treinou cortando amigos de graça no corredor de casa e abriu a primeira barbearia num trailer na rua. Foram anos ajustando a mão, o atendimento e a régua até o corte ficar do jeito que ele queria entregar. Em dezembro de 2019 o negócio ganhou o nome que carrega hoje.</p>
+        <p>Agora são duas unidades, Alcântara e Maricá, com a mesma régua de corte e um time que o Yago formou pra tratar cada cliente pelo nome. A ideia é simples: corte bem feito não pode ser evento, tem que caber na rotina. Por isso a barbearia por assinatura.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-bone" id="agende">
+    <div class="wrap agende__grid">
+      <div class="reveal">
+        <span class="eyebrow">Agendamento</span>
+        <h2 style="font-size:var(--fs-h2);text-transform:uppercase;margin:1rem 0 0.6rem;">Agende em segundos, direto no app.</h2>
+        <p class="section__lead" style="color:#4a5461;">Sem ligação, sem espera na porta. Você escolhe, a gente separa a cadeira.</p>
+        <ul class="steps">
+          <li><span><b>Escolha a unidade</b><span>Alcântara ou Maricá, a que ficar melhor pra você.</span></span></li>
+          <li><span><b>Escolha o serviço</b><span>Corte, barba, acabamento ou o combo que precisar.</span></span></li>
+          <li><span><b>Escolha o profissional</b><span>Marque com o barbeiro de sempre ou conheça um novo.</span></span></li>
+          <li><span><b>Escolha o horário</b><span>Veja os horários livres do dia e confirme na hora.</span></span></li>
+        </ul>
+        <a class="btn btn--primary" data-action="book" href="#">Agendar agora</a>
+      </div>
+      <div class="agende__phone reveal">
+        <img src="assets/mockup-app.png" alt="Tela do aplicativo de agendamento da Barbearia do Yago mostrando a lista de serviços e preços com botões Agendar" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="unidades">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="eyebrow">Unidades</span>
+        <h2>Duas casas, a mesma régua.</h2>
+        <p class="section__lead">Mesmo padrão de corte, mesmo atendimento. Escolha onde te atende melhor.</p>
+      </div>
+      <div class="units">
+        <article class="unit reveal">
+          <img class="unit__img" src="assets/fachada-alcantara.png" alt="Fachada da Barbearia do Yago na unidade de Alcântara, São Gonçalo" />
+          <div class="unit__body">
+            <h3>Alcântara</h3>
+            <p class="unit__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>R. Dr. Alfredo Backer, 536 - Lj G bl4 - Alcântara, São Gonçalo - RJ, 24710-120</span></p>
+            <p class="unit__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1.2.4 2.4.7 3.5a2 2 0 0 1-.5 2.1L8 10.5a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1.1.3 2.3.6 3.5.7A2 2 0 0 1 22 16.9Z"/></svg><span>(21) 97259-9512</span></p>
+            <p class="unit__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Seg a Sex · 9h às 20h &nbsp;·&nbsp; Sáb · 9h às 18h</span></p>
+            <div class="unit__actions">
+              <a class="btn btn--primary" data-action="book-alcantara" href="#">Agendar</a>
+              <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Barbearia+do+Yago+Alc%C3%A2ntara+S%C3%A3o+Gon%C3%A7alo">Ver no mapa</a>
+            </div>
+          </div>
+        </article>
+        <article class="unit reveal">
+          <img class="unit__img" src="assets/fachada-marica.webp" alt="Fachada da Barbearia do Yago na unidade de Maricá, no Shopping Boulevard" />
+          <div class="unit__body">
+            <h3>Maricá</h3>
+            <p class="unit__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>R. Ver. Luiz Antonio da Cunha, 35 - Shopping Boulevard - Centro, Maricá - RJ, 24900-000</span></p>
+            <p class="unit__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1.2.4 2.4.7 3.5a2 2 0 0 1-.5 2.1L8 10.5a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1.1.3 2.3.6 3.5.7A2 2 0 0 1 22 16.9Z"/></svg><span>(21) 98365-2302</span></p>
+            <p class="unit__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Seg a Sex · 9h às 20h &nbsp;·&nbsp; Sáb · 9h às 18h</span></p>
+            <div class="unit__actions">
+              <a class="btn btn--primary" data-action="book-marica" href="#">Agendar</a>
+              <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Barbearia+do+Yago+Shopping+Boulevard+Maric%C3%A1">Ver no mapa</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-bone" id="planos">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="eyebrow">Clube do Yago</span>
+        <h2 id="plansTitle">Planos de Maricá.</h2>
+        <p class="section__lead" style="color:#4a5461;">Escolha a unidade, encontre o clube certo e agende direto pelo app.</p>
+      </div>
+      <span class="plan-filter-label">1. Escolha a unidade</span>
+      <div class="plan-units reveal" id="planUnits" role="tablist" aria-label="Escolha a unidade"></div>
+      <span class="plan-filter-label">2. Escolha o clube</span>
+      <div class="plan-clubs reveal" id="planClubs" role="tablist" aria-label="Escolha um clube"></div>
+      <span class="plans-swipe">Deslize para comparar os planos →</span>
+      <div class="plans" id="plansGrid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="section" id="equipe">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="eyebrow">Equipe</span>
+        <h2>Quem vai te atender.</h2>
+        <p class="section__lead">Escolha a unidade e conheça os profissionais que estão na cadeira.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Escolha a unidade">
+        <button class="tab" role="tab" id="tab-alc" aria-controls="team-alc" aria-selected="true">Alcântara</button>
+        <button class="tab" role="tab" id="tab-mar" aria-controls="team-mar" aria-selected="false">Maricá</button>
+      </div>
+      <div class="team-grid" id="team-alc" role="tabpanel" aria-labelledby="tab-alc">
+        <figure class="member"><img src="assets/team/alcantara/brian.jpg?v=20260916" alt="Brian" /><figcaption>Brian</figcaption></figure>
+        <figure class="member"><img src="assets/team/alcantara/joao-machado.jpg?v=20260918" alt="João Machado" /><figcaption>João Machado</figcaption></figure>
+        <figure class="member"><img src="assets/team/alcantara/nata.jpg?v=20260916" alt="Natã" /><figcaption>Natã</figcaption></figure>
+        <figure class="member"><img src="assets/team/alcantara/richard.jpg?v=20260916" alt="Richard" /><figcaption>Richard</figcaption></figure>
+        <figure class="member"><img src="assets/team/alcantara/suede.jpg?v=20260916" alt="Suede" /><figcaption>Suede</figcaption></figure>
+        <figure class="member"><img src="assets/team/alcantara/thiago.jpg?v=20260918" alt="Thiago" /><figcaption>Thiago</figcaption></figure>
+      </div>
+      <div class="team-grid" id="team-mar" role="tabpanel" aria-labelledby="tab-mar" hidden>
+        <figure class="member"><img src="assets/team/marica/araujo.jpg?v=20260918" alt="Araujo" /><figcaption>Araujo</figcaption></figure>
+        <figure class="member"><img src="assets/team/marica/diego.jpg?v=20260918" alt="Diego" /><figcaption>Diego</figcaption></figure>
+        <figure class="member"><img src="assets/team/marica/felipe.jpg?v=20260918" alt="Felipe" /><figcaption>Felipe</figcaption></figure>
+        <figure class="member"><img src="assets/team/marica/jefferson.jpg?v=20260918" alt="Jefferson" /><figcaption>Jefferson</figcaption></figure>
+        <figure class="member"><img src="assets/team/marica/kamile.jpg?v=20260918" alt="Kamile" /><figcaption>Kamile</figcaption></figure>
+        <figure class="member"><img src="assets/team/marica/marcus.jpg?v=20260918" alt="Marcus" /><figcaption>Marcus</figcaption></figure>
+        <figure class="member"><img src="assets/team/marica/miracema.jpg?v=20260918" alt="Miracema" /><figcaption>Miracema</figcaption></figure>
+        <figure class="member"><img src="assets/team/marica/rafael.jpg" alt="Rafael" /><figcaption>Rafael</figcaption></figure>
+        <figure class="member"><img src="assets/team/marica/rodrigo.jpg?v=20260918" alt="Rodrigo" /><figcaption>Rodrigo</figcaption></figure>
+        <figure class="member"><img src="assets/team/marica/welington.jpg?v=20260918" alt="Welington" /><figcaption>Welington</figcaption></figure>
+        <figure class="member"><img src="assets/team/marica/samuel.jpg?v=20260918" alt="Samuel" /><figcaption>Samuel</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-bone" id="galeria">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="eyebrow">Galeria</span>
+        <h2>Por dentro das casas.</h2>
+      </div>
+      <div class="gallery reveal">
+        <img src="assets/interior-alcantara-1.webp" alt="Interior da unidade de Alcântara com cadeiras e bancada de madeira" loading="lazy" />
+        <img src="assets/recepcao-marica.webp" alt="Recepção da unidade de Maricá com selo de avaliação do Google" loading="lazy" />
+        <img src="assets/interior-marica-2.webp" alt="Estante de produtos e toalhas na unidade de Maricá" loading="lazy" />
+        <img src="assets/recepcao-alcantara.png" alt="Balcão de recepção de Alcântara com logo iluminado na parede" loading="lazy" />
+        <img src="assets/cafe-marica.webp" alt="Bandeja de café e copos personalizados para os clientes" loading="lazy" />
+        <img src="assets/interior-marica-1.webp" alt="Cadeiras com capa da Barbearia do Yago viradas para o espelho" loading="lazy" />
+        <img src="assets/produtos-alcantara.png" alt="Prateleiras com pomadas e produtos de barba em Alcântara" loading="lazy" />
+        <img src="assets/placa-marica.webp" alt="Placa da Barbearia do Yago no estacionamento do Shopping Boulevard Maricá" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="contato">
+    <span class="final__pole" aria-hidden="true"></span>
+    <div class="wrap section">
+      <div class="reveal">
+        <h2>Senta na cadeira.</h2>
+        <p>Seu próximo corte começa com um toque. Escolha a unidade e agende agora.</p>
+        <div class="final__actions">
+          <a class="btn btn--primary" data-action="book" href="#">Agendar horário</a>
+          <a class="btn btn--ghost" href="#unidades">Escolher unidade</a>
+        </div>
+      </div>
+    </div>
+    <span class="final__pole final__pole--b" aria-hidden="true"></span>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <a class="brand" href="#inicio" aria-label="Barbearia do Yago">
+        <span class="brand__badge" aria-hidden="true"></span>
+      </a>
+      <ul class="footer__nav">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#unidades">Unidades</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="#equipe">Equipe</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+    <div class="footer__unit">
+      <h4>Unidade Alcântara</h4>
+      <p>R. Dr. Alfredo Backer, 536 - Lj G bl4 - Alcântara, São Gonçalo - RJ, 24710-120</p>
+      <p>(21) 97259-9512</p>
+      <a class="footer__link" href="#planos">Ver planos desta unidade →</a>
+      <a class="footer__link" data-action="book-alcantara" href="#">Agendar horário →</a>
+    </div>
+    <div class="footer__unit">
+      <h4>Unidade Maricá</h4>
+      <p>R. Ver. Luiz Antonio da Cunha, 35 - Shopping Boulevard - Centro, Maricá - RJ, 24900-000</p>
+      <p>(21) 98365-2302</p>
+      <a class="footer__link" href="#planos">Ver planos desta unidade →</a>
+      <a class="footer__link" data-action="book-marica" href="#">Agendar horário →</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Barbearia do Yago. Todos os direitos reservados.</span>
+    <span class="footer__social">
+      <a data-action="instagram" href="#" aria-label="Instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a data-action="whatsapp" href="#" aria-label="WhatsApp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+      </a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  // === Ajuste aqui os links reais ===
+  const CONFIG = {
+    booking:          "#unidades",                                                  // geral: leva a pessoa a escolher a unidade
+    bookingAlcantara: "https://sites.appbarber.com.br/links/barbeariadoyago-fb89",   // agendamento unidade Alcântara
+    bookingMarica:    "https://sites.appbarber.com.br/links/barbeariadoyago-m73v",   // agendamento unidade Maricá
+    whatsapp:         "https://wa.me/5521983652302",                                 // WhatsApp (Maricá / geral)
+    instagram:        "https://www.instagram.com/barbeariadoyago/"
+  };
+  const ACTION_MAP = {
+    "book": "booking",
+    "book-alcantara": "bookingAlcantara",
+    "book-marica": "bookingMarica",
+    "whatsapp": "whatsapp",
+    "instagram": "instagram"
+  };
+  document.querySelectorAll("[data-action]").forEach(function (el) {
+    var key = ACTION_MAP[el.dataset.action];
+    var url = key && CONFIG[key];
+    if (url) {
+      el.href = url;
+      if (url.charAt(0) !== "#" && !el.hasAttribute("target")) { el.target = "_blank"; el.rel = "noopener"; }
+    }
+  });
+
+  // Planos confirmados por unidade.
+  var planCatalog = {
+    marica: {
+      label: "Maricá",
+      booking: CONFIG.bookingMarica,
+      clubs: [
+        {
+          id: "one",
+          label: "Clube One",
+          checkout: "https://celcash.celcoin.com.br/barbeariadoyago2/clubeone",
+          cards: [
+            { name: "Corte", price: "40,00", featured: true, details: ["1 corte a cada 30 dias"] },
+            { name: "Cabelo e barba", price: "75,00", details: ["1 corte e barba a cada 30 dias"] },
+            { name: "Barba", price: "40,00", details: ["1 barba a cada 30 dias"] }
+          ]
+        },
+        {
+          id: "bronze",
+          label: "Clube Bronze",
+          checkout: "https://celcash.celcoin.com.br/barbeariadoyago2/bronze",
+          cards: [
+            { name: "Corte e barba", price: "129,90", featured: true, featuredLabel: "Mais vendido", details: ["Uso às terças e quartas", "Corte ilimitado", "Barba ilimitada", "10% de desconto em produtos", "50% de desconto no mesmo serviço da assinatura fora do dia", "10% de desconto em alguns serviços extras"] },
+            { name: "Barba", price: "79,90", details: ["Uso às terças e quartas", { text: "Corte ilimitado", available: false }, "Barba ilimitada", "10% de desconto em produtos", "50% de desconto no mesmo serviço da assinatura fora do dia", "10% de desconto em alguns serviços extras"] },
+            { name: "Corte", price: "79,90", details: ["Uso às terças e quartas", "Corte ilimitado", { text: "Barba ilimitada", available: false }, "10% de desconto em produtos", "50% de desconto no mesmo serviço da assinatura fora do dia", "10% de desconto em alguns serviços extras"] }
+          ]
+        },
+        {
+          id: "prata",
+          label: "Clube Prata",
+          checkout: "https://celcash.celcoin.com.br/barbeariadoyago2/barbeariadoyagoprata",
+          cards: [
+            { name: "Corte e barba", price: "149,90", featured: true, details: ["Corte e barba ilimitados", "10% de desconto em produtos", "Descontos em serviços avulsos"] },
+            { name: "Corte", price: "91,90", details: ["Corte ilimitado", "10% de desconto em produtos", "Descontos em serviços avulsos"] },
+            { name: "Barba", price: "91,90", details: ["Barba ilimitada", "10% de desconto em produtos", "Descontos em serviços avulsos"] }
+          ]
+        },
+        {
+          id: "ouro",
+          label: "Clube Ouro",
+          checkout: "https://celcash.celcoin.com.br/barbeariadoyago2/clubeouro",
+          cards: [
+            { name: "Corte e barba", price: "199,90", featured: true, details: ["Corte e barba ilimitados", "Use em todas as unidades", "10% de desconto em produtos", "Descontos em serviços avulsos", "Cadeira cativa a combinar"] },
+            { name: "Corte", price: "119,90", details: ["Corte ilimitado", "Use em todas as unidades", "10% de desconto em produtos", "Descontos em serviços avulsos", "Cadeira cativa a combinar"] },
+            { name: "Barba", price: "119,90", details: ["Barba ilimitada", "Use em todas as unidades", "10% de desconto em produtos", "Descontos em serviços avulsos", "Cadeira cativa a combinar"] }
+          ]
+        }
+      ]
+    },
+    alcantara: {
+      label: "Alcântara",
+      booking: CONFIG.bookingAlcantara,
+      clubs: [
+        {
+          id: "one",
+          label: "Clube One",
+          checkout: "https://celcash.celcoin.com.br/barbeariadoyago/clubeone",
+          cards: [
+            { name: "Corte", price: "35,00", featured: true, details: ["1 corte a cada 30 dias"] },
+            { name: "Cabelo e barba", price: "70,00", details: ["1 corte e barba a cada 30 dias"] },
+            { name: "Barba", price: "35,00", details: ["1 barba a cada 30 dias"] }
+          ]
+        },
+        {
+          id: "bronze",
+          label: "Clube Bronze",
+          checkout: "https://celcash.celcoin.com.br/barbeariadoyago/clubebronze",
+          cards: [
+            { name: "Corte e barba", price: "119,90", featured: true, details: ["Uso às terças e quartas", "Corte e barba ilimitados", "10% de desconto em produtos", "50% de desconto no mesmo serviço fora do dia da assinatura", "10% de desconto em serviços extras"] },
+            { name: "Corte", price: "69,90", details: ["Uso às terças e quartas", "Corte ilimitado", "10% de desconto em produtos", "50% de desconto no mesmo serviço fora do dia da assinatura", "10% de desconto em serviços extras"] },
+            { name: "Barba", price: "69,90", details: ["Uso às terças e quartas", "Barba ilimitada", "10% de desconto em produtos", "50% de desconto no mesmo serviço fora do dia da assinatura", "10% de desconto em serviços extras"] }
+          ]
+        },
+        {
+          id: "prata",
+          label: "Clube Prata",
+          checkout: "https://celcash.celcoin.com.br/barbeariadoyago/clubeprata",
+          cards: [
+            { name: "Corte e barba", price: "139,90", featured: true, details: ["Corte e barba ilimitados de segunda a sábado", "10% de desconto em produtos", "Desconto em serviços extras"] },
+            { name: "Corte", price: "79,90", details: ["Corte ilimitado de segunda a sábado", "10% de desconto em produtos", "Desconto em serviços extras"] },
+            { name: "Barba", price: "79,90", details: ["Barba ilimitada de segunda a sábado", "10% de desconto em produtos", "Desconto em serviços extras"] }
+          ]
+        },
+        {
+          id: "ouro",
+          label: "Clube Ouro",
+          checkout: "https://celcash.celcoin.com.br/barbeariadoyago2/clubeouro",
+          cards: [
+            { name: "Corte e barba", price: "199,90", featured: true, details: ["Corte e barba ilimitados", "Use em todas as unidades", "10% de desconto em produtos", "Descontos em serviços avulsos", "Cadeira cativa a combinar"] },
+            { name: "Corte", price: "119,90", details: ["Corte ilimitado", "Use em todas as unidades", "10% de desconto em produtos", "Descontos em serviços avulsos", "Cadeira cativa a combinar"] },
+            { name: "Barba", price: "119,90", details: ["Barba ilimitada", "Use em todas as unidades", "10% de desconto em produtos", "Descontos em serviços avulsos", "Cadeira cativa a combinar"] }
+          ]
+        }
+      ]
+    }
+  };
+
+  var unitTabs = document.getElementById("planUnits");
+  var clubTabs = document.getElementById("planClubs");
+  var plansGrid = document.getElementById("plansGrid");
+  var plansTitle = document.getElementById("plansTitle");
+  var activeUnit = "marica";
+
+  function renderClub(clubId) {
+    var unit = planCatalog[activeUnit];
+    var club = unit.clubs.find(function (item) { return item.id === clubId; });
+    if (!club) return;
+
+    clubTabs.innerHTML = unit.clubs.map(function (item) {
+      var selected = item.id === clubId;
+      return '<button class="plan-club" type="button" role="tab" aria-selected="' + selected + '" aria-controls="plansGrid" data-club="' + item.id + '">' + item.label + '</button>';
+    }).join("");
+
+    plansGrid.innerHTML = club.cards.map(function (card) {
+      var featured = card.featured ? " plan--feature" : "";
+      var tag = card.featured ? '<span class="plan__tag">' + (card.featuredLabel || 'Mais assinado') + '</span>' : '<span class="plan__tag">' + club.label + '</span>';
+      var actionClass = card.featured ? "btn btn--primary" : "btn btn--ghost";
+      var details = card.details.map(function (detail) {
+        if (typeof detail === "string") return '<li>' + detail + '</li>';
+        if (detail.available === false) return '<li class="plan__detail--unavailable" aria-label="' + detail.text + ' não incluído">' + detail.text + '</li>';
+        return '<li>' + detail.text + '</li>';
+      }).join("");
+      return '<article class="plan reveal is-in' + featured + '">' +
+        tag +
+        '<span class="plan__name">' + card.name + '</span>' +
+        '<span class="plan__price">R$ ' + card.price + '<small> /mês</small></span>' +
+        '<ul class="plan__details">' + details + '</ul>' +
+        '<a class="' + actionClass + '" href="' + (club.checkout || unit.booking) + '" target="_blank" rel="noopener">Assinar clube</a>' +
+        '</article>';
+    }).join("");
+    plansGrid.scrollLeft = 0;
+  }
+
+  function renderUnit(unitId) {
+    var unit = planCatalog[unitId];
+    if (!unit) return;
+    activeUnit = unitId;
+    plansTitle.textContent = "Planos de " + unit.label + ".";
+    unitTabs.innerHTML = Object.keys(planCatalog).map(function (id) {
+      var item = planCatalog[id];
+      var selected = id === activeUnit;
+      return '<button class="plan-unit" type="button" role="tab" aria-selected="' + selected + '" aria-controls="plansGrid" data-unit="' + id + '">' + item.label + '</button>';
+    }).join("");
+    renderClub(unit.clubs[0].id);
+    clubTabs.scrollLeft = 0;
+  }
+
+  clubTabs.addEventListener("click", function (event) {
+    var button = event.target.closest("[data-club]");
+    if (button) renderClub(button.dataset.club);
+  });
+
+  unitTabs.addEventListener("click", function (event) {
+    var button = event.target.closest("[data-unit]");
+    if (button) renderUnit(button.dataset.unit);
+  });
+
+  renderUnit("marica");
+
+  // Mobile nav
+  var nav = document.getElementById("nav");
+  var toggle = document.getElementById("navToggle");
+  function setMenu(open) {
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+  toggle.addEventListener("click", function () {
+    setMenu(!nav.classList.contains("is-open"));
+  });
+  nav.querySelectorAll(".nav__links a").forEach(function (a) {
+    a.addEventListener("click", function () { setMenu(false); });
+  });
+
+  // Equipe tabs
+  var tabs = document.querySelectorAll(".tab");
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      tabs.forEach(function (t) {
+        var sel = t === tab;
+        t.setAttribute("aria-selected", sel ? "true" : "false");
+        document.getElementById(t.getAttribute("aria-controls")).hidden = !sel;
+      });
+    });
+  });
+
+  // Reveal on scroll
+  var reveals = document.querySelectorAll(".reveal");
+  function revealAll() { reveals.forEach(function (el) { el.classList.add("is-in"); }); }
+  if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    reveals.forEach(function (el) { io.observe(el); });
+    // Failsafe: never leave content hidden
+    setTimeout(revealAll, 2500);
+    window.addEventListener("load", function () { setTimeout(revealAll, 400); });
+  } else {
+    revealAll();
+  }
+</script>
+
 </body>
 </html>
