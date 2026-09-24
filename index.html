@@ -884,8 +884,13 @@
     }
   }
   /* Logos nas cores originais da marca */
-  .brand__badge,
-  .hero__logo { filter: none; }
+  .brand__badge { filter: none; }
+  .hero__logo {
+    filter:
+      drop-shadow(0 0 1px #ffffff)
+      drop-shadow(0 0 3px rgba(255,255,255,0.75))
+      drop-shadow(0 0 8px rgba(255,255,255,0.3));
+  }
 </style>
 </head>
 <body>
